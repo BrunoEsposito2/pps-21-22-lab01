@@ -1,7 +1,10 @@
+import lab01.tdd.BasicCircularList;
 import lab01.tdd.CircularList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,17 +14,17 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CircularListTest {
 
+    private CircularList circularList;
+
     @BeforeEach
     void setUp() {
-        circularList = new CircularList();
+        circularList = new BasicCircularList();
     }
 
     @Test
     void testAdd() {
-        LinkedList<Object> list = new LinkedList<Object>();
         circularList.add(2);
-        list.add(2)
-        assertArrayEquals(list, circularList);
+        assertEquals(2, circularList.next());
     }
 
     @Test
