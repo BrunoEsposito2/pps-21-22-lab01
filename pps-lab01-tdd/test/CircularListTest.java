@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,7 +25,7 @@ public class CircularListTest {
     @Test
     void testAdd() {
         circularList.add(2);
-        assertEquals(2, circularList.next());
+        assertEquals(2, circularList.next().get());
     }
 
     @Test
