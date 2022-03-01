@@ -48,15 +48,15 @@ public class CircularListTest {
     void testNext() {
         circularList.add(2);
         circularList.add(3);
-        assertEquals(2, circularList.next());
-        assertEquals(3, circularList.next());
+        assertEquals(2, circularList.next().get());
+        assertEquals(3, circularList.next().get());
     }
 
     @Test
     void testPrevious() {
         circularList.add(2);
         circularList.add(3);
-        assertEquals(3, circularList.previous());
+        assertEquals(3, circularList.previous().get());
     }
 
     @Test
@@ -64,9 +64,9 @@ public class CircularListTest {
         circularList.add(2);
         circularList.add(3);
         circularList.next();
-        assertEquals(3, circularList.next());
+        assertEquals(3, circularList.next().get());
         circularList.reset();
-        assertEquals(2, circularList.next());
+        assertEquals(2, circularList.next().get());
     }
 
 }
