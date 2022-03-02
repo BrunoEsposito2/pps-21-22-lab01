@@ -45,7 +45,7 @@ public class CircularListTest {
     @Test
     void testIsEmpty() {
         final int value = 2;
-        circularList.add(2);
+        circularList.add(value);
         assertFalse(circularList.isEmpty());
     }
 
