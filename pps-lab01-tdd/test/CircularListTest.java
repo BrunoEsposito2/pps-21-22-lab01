@@ -19,8 +19,9 @@ public class CircularListTest {
 
     @Test
     void testAdd() {
-        circularList.add(2);
-        assertEquals(2, circularList.next().get());
+        final int value = 2;
+        circularList.add(value);
+        assertEquals(value, circularList.next().get());
     }
 
     @Test
@@ -30,9 +31,10 @@ public class CircularListTest {
 
     @Test
     void testSize() {
+        final int expectedSize = 2;
         circularList.add(3);
         circularList.add(4);
-        assertEquals(2, circularList.size());
+        assertEquals(expectedSize, circularList.size());
     }
 
     @Test
@@ -42,53 +44,60 @@ public class CircularListTest {
 
     @Test
     void testIsEmpty() {
+        final int value = 2;
         circularList.add(2);
         assertFalse(circularList.isEmpty());
     }
 
     @Test
     void testNext() {
+        final int nextValueExpected = 3;
         circularList.add(2);
         circularList.add(3);
         circularList.next();
-        assertEquals(3, circularList.next().get());
+        assertEquals(nextValueExpected, circularList.next().get());
     }
 
     @Test
     void testCircularNext() {
+        final int firstValueExpected = 2;
         circularList.add(2);
         circularList.add(3);
         circularList.next();
         circularList.next();
-        assertEquals(2, circularList.next().get());
+        assertEquals(firstValueExpected, circularList.next().get());
     }
 
     @Test
     void testCircularPrevious() {
+        final int lastValueExpected = 3;
+        final int previousValueExpected = 2;
         circularList.add(2);
         circularList.add(3);
-        assertEquals(3, circularList.previous().get());
-        assertEquals(2, circularList.previous().get());
+        assertEquals(lastValueExpected, circularList.previous().get());
+        assertEquals(previousValueExpected, circularList.previous().get());
     }
 
     @Test
     void testPrevious() {
+        final int previousValueExpected = 2;
         circularList.add(2);
         circularList.add(3);
         circularList.next();
         circularList.next();
-        assertEquals(2, circularList.previous().get());
+        assertEquals(previousValueExpected, circularList.previous().get());
     }
 
     @Test
     void testReset() {
+        final int firstValueExpected = 2;
         circularList.add(2);
         circularList.add(3);
         circularList.add(8);
         circularList.next();
         circularList.next();
         circularList.reset();
-        assertEquals(2, circularList.next().get());
+        assertEquals(firstValueExpected, circularList.next().get());
     }
 
 }
