@@ -24,17 +24,24 @@ public class CircularListTest {
     }
 
     @Test
-    void testSize() {
+    void testEmptySize() {
         assertEquals(0, circularList.size());
+    }
+
+    @Test
+    void testSize() {
         circularList.add(3);
-        assertEquals(1, circularList.size());
         circularList.add(4);
         assertEquals(2, circularList.size());
     }
 
     @Test
-    void testIsEmpty() {
+    void testIsEmptySimple() {
         assertTrue(circularList.isEmpty());
+    }
+
+    @Test
+    void testIsEmpty() {
         circularList.add(2);
         assertFalse(circularList.isEmpty());
     }
@@ -43,13 +50,21 @@ public class CircularListTest {
     void testNext() {
         circularList.add(2);
         circularList.add(3);
-        assertEquals(2, circularList.next().get());
+        circularList.next();
         assertEquals(3, circularList.next().get());
+    }
+
+    @Test
+    void testCircularNext() {
+        circularList.add(2);
+        circularList.add(3);
+        circularList.next();
+        circularList.next();
         assertEquals(2, circularList.next().get());
     }
 
     @Test
-    void testPrevious() {
+    void testCircularPrevious() {
         circularList.add(2);
         circularList.add(3);
         assertEquals(3, circularList.previous().get());
@@ -57,11 +72,21 @@ public class CircularListTest {
     }
 
     @Test
-    void testReset() {
+    void testPrevious() {
         circularList.add(2);
         circularList.add(3);
         circularList.next();
-        assertEquals(3, circularList.next().get());
+        circularList.next();
+        assertEquals(2, circularList.previous().get());
+    }
+
+    @Test
+    void testReset() {
+        circularList.add(2);
+        circularList.add(3);
+        circularList.add(8);
+        circularList.next();
+        circularList.next();
         circularList.reset();
         assertEquals(2, circularList.next().get());
     }
