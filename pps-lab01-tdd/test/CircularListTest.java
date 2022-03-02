@@ -3,11 +3,6 @@ import lab01.tdd.CircularList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -50,6 +45,7 @@ public class CircularListTest {
         circularList.add(3);
         assertEquals(2, circularList.next().get());
         assertEquals(3, circularList.next().get());
+        assertEquals(2, circularList.next().get());
     }
 
     @Test
@@ -57,7 +53,7 @@ public class CircularListTest {
         circularList.add(2);
         circularList.add(3);
         assertEquals(3, circularList.previous().get());
-        assertEquals(2, circularList.next().get());
+        assertEquals(2, circularList.previous().get());
     }
 
     @Test
