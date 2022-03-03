@@ -51,6 +51,11 @@ public class BasicCircularList implements CircularList {
 
     @Override
     public Optional<Integer> next(SelectStrategy strategy) {
+        for (final int i : circularList) {
+            if (strategy.apply(i)) {
+                return Optional.of(i);
+            }
+        }
         return Optional.empty();
     }
 }
