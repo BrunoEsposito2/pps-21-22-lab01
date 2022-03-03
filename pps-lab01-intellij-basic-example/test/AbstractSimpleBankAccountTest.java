@@ -19,15 +19,19 @@ public abstract class AbstractSimpleBankAccountTest {
 
     @Test
     void testDeposit() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        assertEquals(100, bankAccount.getBalance());
+        final int deposited = 100;
+        bankAccount.deposit(accountHolder.getId(), deposited);
+        assertEquals(deposited, bankAccount.getBalance());
     }
 
     @Test
     void testWrongDeposit() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        bankAccount.deposit(2, 50);
-        assertEquals(100, bankAccount.getBalance());
+        final int deposited = 100;
+        final int wrongDeposited = 50;
+        final int wrongId = 2;
+        bankAccount.deposit(accountHolder.getId(), deposited);
+        bankAccount.deposit(wrongId, wrongDeposited);
+        assertEquals(deposited, bankAccount.getBalance());
     }
 
     @Test
@@ -35,8 +39,11 @@ public abstract class AbstractSimpleBankAccountTest {
 
     @Test
     void testWrongWithdraw() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        bankAccount.withdraw(2, 70);
-        assertEquals(100, bankAccount.getBalance());
+        final int deposited = 100;
+        final int wrongWithdrawn = 70;
+        final int wrongId = 2;
+        bankAccount.deposit(accountHolder.getId(), deposited);
+        bankAccount.withdraw(wrongId, wrongWithdrawn);
+        assertEquals(deposited, bankAccount.getBalance());
     }
 }

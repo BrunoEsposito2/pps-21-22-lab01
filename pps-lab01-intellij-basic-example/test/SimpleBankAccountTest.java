@@ -19,9 +19,11 @@ class SimpleBankAccountTest extends AbstractSimpleBankAccountTest {
     @Override
     @Test
     void testWithdraw() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        bankAccount.withdraw(accountHolder.getId(), 70);
-        assertEquals(30, bankAccount.getBalance());
+        final int deposited = 100;
+        final int withdrawn = 70;
+        bankAccount.deposit(accountHolder.getId(), deposited);
+        bankAccount.withdraw(accountHolder.getId(), withdrawn);
+        assertEquals(deposited - withdrawn, bankAccount.getBalance());
     }
 
 }
