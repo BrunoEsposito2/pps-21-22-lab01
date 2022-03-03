@@ -1,3 +1,4 @@
+import lab01.tdd.SelectStrategy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -58,6 +59,30 @@ public class CircularListTest extends AbstractCircularListTest {
         circularList.next();
         circularList.reset();
         assertEquals(firstValueExpected, circularList.next().get());
+    }
+
+    @Test
+    void testNextEvenStrategy() {
+        circularList.add(3);
+        circularList.add(5);
+        circularList.add(8);
+        assertEquals(8, circularList.next(EVEN_STRATEGY).get());
+    }
+
+    @Test
+    void testNextMultipleOfStrategy() {
+        circularList.add(6);
+        circularList.add(10);
+        assertEquals(10, circularList.next(MULTIPLE_OF_STRATEGY).get());
+    }
+
+    @Test
+    void testNextEqualsStrategy() {
+        circularList.add(6);
+        circularList.add(4);
+        circularList.add(23);
+        circularList.add(9);
+        assertEquals(23, circularList.next(EQUALS_STRATEGY).get());
     }
 
 }
