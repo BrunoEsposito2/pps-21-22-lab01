@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class AbstractSimpleBankAccountTest {
-    AccountHolder accountHolder;
-    BankAccount bankAccount;
+    protected AccountHolder accountHolder;
+    protected BankAccount bankAccount;
 
     @BeforeEach
     abstract void beforeEach();
