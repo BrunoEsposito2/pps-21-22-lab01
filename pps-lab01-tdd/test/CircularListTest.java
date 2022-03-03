@@ -65,14 +65,14 @@ public class CircularListTest extends AbstractCircularListTest {
         circularList.add(3);
         circularList.add(5);
         circularList.add(8);
-        assertEquals(8, circularList.next(getEvenStrategy()).get());
+        assertEquals(8, circularList.next(strategyFactory.getStrategy("EVEN")).get());
     }
 
     @Test
     void testNextMultipleOfStrategy() {
         circularList.add(6);
         circularList.add(10);
-        assertEquals(10, circularList.next(getMultipleOfStrategy()).get());
+        assertEquals(10, circularList.next(strategyFactory.getStrategy("MULTIPLE")).get());
     }
 
     @Test
@@ -81,7 +81,7 @@ public class CircularListTest extends AbstractCircularListTest {
         circularList.add(4);
         circularList.add(23);
         circularList.add(9);
-        assertEquals(23, circularList.next(getEqualsStrategy()).get());
+        assertEquals(23, circularList.next(strategyFactory.getStrategy("EQUALS")).get());
     }
 
 }
