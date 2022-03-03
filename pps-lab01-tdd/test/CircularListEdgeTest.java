@@ -28,10 +28,8 @@ public class CircularListEdgeTest extends AbstractCircularListTest {
     @Test
     void testCircularPrevious() {
         final int lastValueExpected = 3;
-        final int previousValueExpected = 2;
         circularList.add(2);
         circularList.add(3);
         assertEquals(lastValueExpected, circularList.previous().get());
-        assertEquals(previousValueExpected, circularList.previous().get());
     }
 }
