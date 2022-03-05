@@ -1,3 +1,4 @@
+import lab01.example.model.AbstractSimpleBankAccount;
 import lab01.example.model.AccountHolder;
 import lab01.example.model.BankAccount;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class AbstractSimpleBankAccountTest {
     protected AccountHolder accountHolder;
-    protected BankAccount bankAccount;
+    protected AbstractSimpleBankAccount bankAccount;
 
     @BeforeEach
     abstract void beforeEach();
