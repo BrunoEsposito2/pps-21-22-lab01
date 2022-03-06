@@ -1,5 +1,9 @@
 package lab01.tdd;
 
-public abstract class AbstractStrategyFactory {
-    public abstract SelectStrategy getStrategy(final String strategy);
+public interface AbstractStrategyFactory {
+    public SelectStrategy getEqualsStrategy();
+
+    public SelectStrategy getEvenStrategy();
+
+    public SelectStrategy getMultipleOfStrategy();
 }
