@@ -1,11 +1,10 @@
 package lab01.tdd;
 
-import java.util.LinkedList;
-import java.util.Optional;
+import java.util.*;
 
 public class BasicCircularList implements CircularList {
 
-    private final LinkedList<Integer> circularList;
+    private final List<Integer> circularList;
     private int position;
 
     public BasicCircularList() {
